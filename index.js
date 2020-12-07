@@ -8,6 +8,8 @@
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
 
+
+
 const man = {
    species: 'human',
    name: 'John',
@@ -15,7 +17,7 @@ const man = {
    legs: 2,
    hands: 2,
    saying: 'Hi! How are you?',
-   friendlyTo: 'Toby, Tereza, Tom'
+   friendlyTo: ['Toby', 'Tereza', 'Tom']
 };
 
 const woman = {
@@ -25,7 +27,7 @@ const woman = {
    legs: 2,
    hands: 2,
    saying: 'I`m fine, thanks!',
-   friendlyTo: 'Tom'
+   friendlyTo: ['Tom']
 };
 
 const dog = {
@@ -35,7 +37,7 @@ const dog = {
    legs: 4,
    hands: 0,
    saying: 'woof-woof!',
-   friendlyTo: 'John, Tereza'
+   friendlyTo: ['John', 'Tereza']
 };
 
 const cat = {
@@ -45,17 +47,18 @@ const cat = {
    legs: 4,
    hands: 0,
    saying: 'meow-meow!',
-   friendlyTo: 'Tereza'
+   friendlyTo: ['Tereza']
 };
 
-function printObject(object) {
-   print(Object.values(object).join('; '));
-}
+const world = [man, woman, dog, cat];
 
-printObject(man);
-printObject(woman);
-printObject(dog);
-printObject(cat);
+printArrayOfObjects = arr => {
+   arr.forEach(obj =>
+      print(obj.species + '; ' + obj.name + '; ' + obj.gender + '; ' +
+         obj.legs + '; ' + obj.hands + '; ' + obj.saying + '; ' + obj.friendlyTo));
+};
+
+printArrayOfObjects(world);
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
@@ -67,8 +70,7 @@ printObject(cat);
    */
 
 
-
-/* Print examples: 
+/* Print examples:
    print('ABC');
    print('<strong>ABC</strong>');
    print('<strong>ABC</strong>', 'div');
