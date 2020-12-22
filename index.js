@@ -68,7 +68,7 @@ const listOfKeys = ['species', 'name', 'gender', 'legs', 'hands', 'tail', 'sayin
 
 let output = world.map(inhabitant =>
    listOfKeys.map(property => inhabitant[property]
-   ).filter(elem => elem).join('; ')
+   ).filter(elem => elem !== undefined).join('; ')
 ).join('.\n');
 
 print(output + '.');
